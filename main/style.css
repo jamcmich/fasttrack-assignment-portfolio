@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Josefin+Sans:wght@600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+
+body {
+    height: 100vh;
+}
+
+#landing {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#landing .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#landing .row:nth-child(1) {
+    flex: 1 1 auto;
+}
+
+#landing .row:nth-child(2) {
+    flex: 0 1 20vh;
+    background-color: #415A77;
+}
+
+#landing .row .col:nth-of-type(1) > p {
+    font-family: 'Inter', sans-serif;
+}
+
+#landing .row .col:nth-of-type(1) #title {
+    font-size: 2.25rem;
+    color: #4285F4;
+}
+
+#landing .row .col:nth-of-type(1) #description {
+    font-size: 1.75rem;
+    color: #2D3E52;
+}
+
+#landing .row .col .overlap {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem 0 3rem 0;
+}
+
+#landing .row .col .overlap > p {
+    width: 0%;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 7.375rem;
+    text-transform: uppercase;
+}
+
+#landing .row .col .overlap p:nth-of-type(1) {
+    color: #BAD0E5;
+}
+
+#landing .row .col .overlap p:nth-of-type(2) {
+    position: relative;
+    bottom: 5px;
+    left: 5px;
+    color: #2D3E52;
+}
+
+#landing .row .col:nth-child(1) {
+    margin-left: 10vw;
+    margin-right: 2rem;
+}
+
+#landing .row .col:nth-child(2) {
+    margin-left: 2rem;
+    margin-right: 10vw;
+}
+
+#landing .row .col:nth-child(2) img {
+    position: relative;
+    height: 50rem;
+    top: 7rem;
+}
