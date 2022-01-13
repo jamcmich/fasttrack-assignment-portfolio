@@ -9,27 +9,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Document</title>
 
+    <!-- animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
     <!-- external css -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- page 1 -->
     <section id="landing">
         <div class="row">
             <div class="col">
-                <p id="subtitle">Software Engineer & Developer</p>
+                <p id="subtitle" class="typewriter"></p>
                 <div id="overlap">
                     <p>Jacob McMichael</p>
                     <p>Jacob McMichael</p>
                 </div>
-                <p id="description">A Digital Culture graduate helping individuals and organizations realize their ideas by developing
-                    solutions using media, technology, and design. 
-                    
-                    <br>
-                    <br>
-
-                    Seeking a full-time, entry-level position to further
-                    my professional skills and proficiency in programming and software development.
+                <p id="description">
+                    A Digital Culture graduate helping individuals and organizations realize their ideas
+                    by developing
+                    solutions using media, technology, and design.
                 </p>
             </div>
 
@@ -39,15 +39,27 @@
         </div>
 
         <div class="row">
-            <div class="col">
-                <p>/in/jacobmcmichael</p>
-            </div>
+            <div class="wrapper">
+                <a class="col" target="_blank" href="https://www.linkedin.com/in/jacobmcmichael/">
+                    <img id="linkedin" class="social-icon" src="./assets/linkedin.png" alt="">
+                </a>
 
-            <div class="col">
-                <p>jacobmcmichael@gmail.com</p>
+                <a class="col" target="_blank" href="https://github.com/jamcmich">
+                    <img id="github" class="social-icon" src="./assets/github.png" alt="">
+                </a>
+
+                <a class="col" target="_blank" href="mailto:jacobmcmichael@gmail.com">
+                    <img id="gmail" class="social-icon" src="./assets/google.png" alt="">
+                </a>
             </div>
         </div>
     </section>
+
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- external javascript -->
+    <script src="script.js"></script>
 </body>
 
 </html>

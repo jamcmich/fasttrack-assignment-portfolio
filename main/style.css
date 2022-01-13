@@ -2,9 +2,9 @@
 
 :root {
     /* font sizes */
-    --title: 6.146vw;
-    --subtitle: 1.875vw;
-    --text: 1.458vw;
+    --title: calc(6.146vw - 0.25vw);
+    --subtitle: calc(1.875vw - 0.25vw);
+    --text: calc(1.458vw - 0.25vw);
 
     /* font colors */
     --blue: #4285F4;
@@ -13,6 +13,7 @@
 
     /* other */
     --title-margin: 1.481vw 0 1.481vw 0;
+    --social-icon-size: 4vw;
 }
 
 html {
@@ -51,74 +52,171 @@ body {
 #landing .row:nth-child(2) {
     background-color: #415A77;
     min-height: 10vw;
-    justify-content: flex-start;
+    /* justify-content: space-around; */
 }
 
-#landing .row:nth-of-type(1) .col {
+#landing .row.row:nth-child(2) .wrapper {
+    display: flex;
+    width: 25%;
+    margin: auto;
+    margin-left: 10vw;
+    justify-content: space-between;
+}
+
+#landing .row:nth-child(1) .col {
     flex: 1 1 auto;
 }
 
-#landing .row:nth-of-type(1) .col:nth-of-type(1) > p {
+#landing .row:nth-child(1) .col:nth-child(1)>p {
     font-family: 'Inter', sans-serif;
+    line-height: 150%;
 }
 
-#landing .row:nth-of-type(1) .col:nth-of-type(1) #subtitle {
+#landing .row:nth-child(1) .col:nth-child(1) #subtitle {
     font-size: var(--subtitle);
     color: var(--blue);
 }
 
-#landing .row:nth-of-type(1) .col:nth-of-type(1) #description {
+#landing .row:nth-child(1) .col:nth-child(1) #description {
     font-size: var(--text);
     color: var(--dark-blue);
 }
 
-#landing .row:nth-of-type(1) .col:nth-of-type(1) #overlap {
+#landing .row:nth-child(1) .col:nth-child(1) #overlap {
     display: flex;
     flex-wrap: wrap;
     margin: var(--title-margin);
 }
 
-#landing .row:nth-of-type(1) .col:nth-of-type(1) #overlap > p {
+#landing .row:nth-child(1) .col:nth-child(1) #overlap>p {
     width: 0%;
     font-family: 'Josefin Sans', sans-serif;
     font-size: var(--title);
+    line-height: 110%;
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
-#landing .row:nth-of-type(1) .col:nth-of-type(1) #overlap p:nth-of-type(1) {
+#landing .row:nth-child(1) .col:nth-child(1) #overlap p:nth-of-type(1) {
     color: var(--light-blue);
 }
 
-#landing .row:nth-of-type(1) .col:nth-of-type(1) #overlap p:nth-of-type(2) {
+#landing .row:nth-child(1) .col:nth-child(1) #overlap p:nth-of-type(2) {
     position: relative;
     bottom: 5px;
     left: 5px;
     color: var(--dark-blue);
 }
 
-#landing .row .col:nth-child(1) {
-    margin-left: 10vw;
-    margin-right: 1.667vw;
+#landing .row:nth-child(1) .col:nth-child(1) {
+    margin: auto 1.667vw auto 10vw;
 }
 
-#landing .row .col:nth-child(2) {
-    margin-left: 1.667vw;
-    margin-right: 10vw;
+#landing .row:nth-child(1) .col:nth-child(2) {
+    margin: auto 10vw auto 1.667vw;
 }
 
 #landing .row:nth-child(1) .col:nth-child(2) #portrait {
     position: relative;
-    top: 10.370vw;
+    top: 6vw;
 
-    max-width: 40vw;
+    max-width: 35vw;
     height: auto;
 }
 
 #landing .row:nth-child(2) .col {
     flex-direction: column;
+    height: var(--social-icon-size);
 }
 
-#landing .row:nth-child(2) .col > p {
+#landing .row:nth-child(2) .col>p {
     flex: 1;
+    font-family: 'Inter', sans-serif;
     font-size: var(--text);
+    color: white;
+    text-decoration: underline;
+}
+
+#landing .row:nth-child(2) .col a:hover {
+    cursor: pointer;
+}
+
+#landing .row:nth-child(2) .col .social-icon {
+    width: var(--social-icon-size);
+}
+
+/* hidden */
+.text-fade-in {
+    opacity: 0%;
+}
+
+/* visible */
+.show {
+    opacity: 100% !important;
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+}
+
+/* animations */
+/* typewriter */
+.blinker-span {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 24em;
+    }
+}
+
+@keyframes blinkTextCursor {
+    from {
+        border-right-color: rgba(255, 255, 255, .75);
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+}
+
+/* hanging */
+.hanging-animation {
+    display: inline-block;
+    transform: translateY(0px);
+    transition: 0.25s;
+}
+
+.hanging-animation:hover {
+    display: inline-block;
+    transform: translateY(8px);
+    color: var(--blue);
+    transition: 0.25s;
 }
