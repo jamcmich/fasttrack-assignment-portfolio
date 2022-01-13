@@ -34,7 +34,7 @@ body {
 #landing {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
 }
 
 #landing .row {
@@ -46,12 +46,14 @@ body {
 
 #landing .row:nth-child(1) {
     background: white;
+    height: 80%;
     /* min-height: 81.481vw; */
 }
 
 #landing .row:nth-child(2) {
     background-color: #415A77;
-    min-height: 10vw;
+    height: 20%;
+    /* min-height: 10vw; */
     /* justify-content: space-around; */
 }
 
@@ -70,6 +72,10 @@ body {
 #landing .row:nth-child(1) .col:nth-child(1)>p {
     font-family: 'Inter', sans-serif;
     line-height: 150%;
+}
+
+#landing .row:nth-child(1) .col:nth-child(1) p:nth-child(1) > span {
+    display: inline-block;
 }
 
 #landing .row:nth-child(1) .col:nth-child(1) #subtitle {
@@ -103,8 +109,8 @@ body {
 
 #landing .row:nth-child(1) .col:nth-child(1) #overlap p:nth-of-type(2) {
     position: relative;
-    bottom: 5px;
-    left: 5px;
+    bottom: 0.25vw;
+    left: 0.25vw;
     color: var(--dark-blue);
 }
 
@@ -120,13 +126,13 @@ body {
     position: relative;
     top: 6vw;
 
-    max-width: 35vw;
+    max-width: 30vw;
     height: auto;
 }
 
 #landing .row:nth-child(2) .col {
     flex-direction: column;
-    height: var(--social-icon-size);
+    /* height: var(--social-icon-size); */
 }
 
 #landing .row:nth-child(2) .col>p {
@@ -207,10 +213,9 @@ body {
     }
 }
 
-/* hanging */
+/* hanging letters */
 .hanging-animation {
     display: inline-block;
-    transform: translateY(0px);
     transition: 0.25s;
 }
 
@@ -219,4 +224,13 @@ body {
     transform: translateY(8px);
     color: var(--blue);
     transition: 0.25s;
+}
+
+/* growing icons */
+.grow {
+    transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+    transform: scale(1.1);
 }

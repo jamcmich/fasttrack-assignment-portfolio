@@ -9,7 +9,7 @@ const addClasses = () => {
 
     // portrait
     let portrait = document.querySelector("#portrait");
-    portrait.setAttribute("style", "animation: slideInRight 1 1s");
+    portrait.setAttribute("style", "animation: slideInRight 1 2s");
 
     // "Jacob McMichael" text
     let nameSpans = document.querySelectorAll("#overlap > p:nth-child(2) > span");
@@ -19,19 +19,19 @@ const addClasses = () => {
     });
 }
 
-const typewriterAnimation = (el) => {
+const typewriterAnimation = () => {
     var messageArray = ["Software Engineer & Developer"]; // could make these random or sequential statements in the future
-    var textPosition = 0; 
-    var speed = 100;
+    var textPosition = 0;
+    var speed = 100; // every (n)ms
 
     typewriter = () => {
         document.querySelector(".typewriter").innerHTML = messageArray[0].substring(0, textPosition) + '<span class="blinker-span">\u007C</span>';
-      
-        if(textPosition++ != messageArray[0].length)
-          setTimeout(typewriter, speed);
-      }
-      
-      window.addEventListener("load", typewriter)
+
+        if (textPosition++ != messageArray[0].length)
+            setTimeout(typewriter, speed);
+    }
+
+    window.addEventListener("load", typewriter)
 }
 
 const spanWrapper = (el) => {
@@ -63,6 +63,5 @@ spanMe.forEach((el) => {
     spanWrapper(el);
 });
 
-let message = document.querySelector(".typewriter");
-typewriterAnimation(message);
 addClasses();
+typewriterAnimation();
