@@ -13,16 +13,16 @@ Students will create their own portfolio page/site and prepare a presentation in
 ## Required Content
 
 ---
-- [ ] Resume present and available for download
+- [ x ] Resume present and available for download
 - [ ] Routing either between pages || single scrolling page (using anchors or a some type of navigation)
 - [ ] Working links to Github projects or deployed projects
-- [ ] About section. (Summary can be taken from your story mining).
-- [ ] At least (1) animation existing anywhere on the site (e.g.- sliders, button effects, loading spinner, etc...)
-- [ ] Github API specific data - Object structure below
-- [ ] ----------------------------
-- [ ] Profile picture present, pulled from Github via Github's API
-- [ ] Bio underneath profile picture, pulled from Github via Github's API
-- [ ] Hire-able status displayed, pulled from Github via Github's API
+- [ x ] About section. (Summary can be taken from your story mining).
+- [ x ] At least (1) animation existing anywhere on the site (e.g.- sliders, button effects, loading spinner, etc...)
+- [ x ] Github API specific data - Object structure below
+- [ x ] ----------------------------
+- [ x ] Profile picture present, pulled from Github via Github's API
+- [ x ] Bio underneath profile picture, pulled from Github via Github's API
+- [ x ] Hire-able status displayed, pulled from Github via Github's API
 
 
 ## The example object will be returned from Github's API

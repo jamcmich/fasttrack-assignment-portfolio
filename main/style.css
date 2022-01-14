@@ -1,19 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Josefin+Sans:wght@600&display=swap');
 
 :root {
+    /* fonts */
+    --josephin-sans: 'Josefin Sans', sans-serif;
+    --inter: 'Inter', sans-serif;
+
     /* font sizes */
     --title: calc(6.146vw - 0.25vw);
     --subtitle: calc(1.875vw - 0.25vw);
     --text: calc(1.458vw - 0.25vw);
 
-    /* font colors */
+    /* colors */
     --blue: #4285F4;
     --light-blue: #BAD0E5;
+    --blue-bg: #415A77;
     --dark-blue: #2D3E52;
 
     /* other */
     --title-margin: 1.481vw 0 1.481vw 0;
     --social-icon-size: 4vw;
+    --borderWidth: 0.5vw;
 }
 
 html {
@@ -31,6 +37,7 @@ body {
     min-height: 100vh;
 }
 
+/* page 1 */
 #landing {
     display: flex;
     flex-direction: column;
@@ -47,11 +54,12 @@ body {
 #landing .row:nth-child(1) {
     background: white;
     height: 80%;
+    margin: 0 10vw;
     /* min-height: 81.481vw; */
 }
 
 #landing .row:nth-child(2) {
-    background-color: #415A77;
+    background-color: var(--blue-bg);
     height: 20%;
     /* min-height: 10vw; */
     /* justify-content: space-around; */
@@ -70,11 +78,11 @@ body {
 }
 
 #landing .row:nth-child(1) .col:nth-child(1)>p {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--inter);
     line-height: 150%;
 }
 
-#landing .row:nth-child(1) .col:nth-child(1) p:nth-child(1) > span {
+#landing .row:nth-child(1) .col:nth-child(1) p:nth-child(1)>span {
     display: inline-block;
 }
 
@@ -86,6 +94,7 @@ body {
 #landing .row:nth-child(1) .col:nth-child(1) #description {
     font-size: var(--text);
     color: var(--dark-blue);
+    margin-right: 8vw;
 }
 
 #landing .row:nth-child(1) .col:nth-child(1) #overlap {
@@ -96,7 +105,7 @@ body {
 
 #landing .row:nth-child(1) .col:nth-child(1) #overlap>p {
     width: 0%;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: var(--josephin-sans);
     font-size: var(--title);
     line-height: 110%;
     text-transform: uppercase;
@@ -115,11 +124,11 @@ body {
 }
 
 #landing .row:nth-child(1) .col:nth-child(1) {
-    margin: auto 1.667vw auto 10vw;
+    margin: auto;
 }
 
 #landing .row:nth-child(1) .col:nth-child(2) {
-    margin: auto 10vw auto 1.667vw;
+    margin: auto;
 }
 
 #landing .row:nth-child(1) .col:nth-child(2) #portrait {
@@ -137,7 +146,7 @@ body {
 
 #landing .row:nth-child(2) .col>p {
     flex: 1;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--inter);
     font-size: var(--text);
     color: white;
     text-decoration: underline;
@@ -151,9 +160,175 @@ body {
     width: var(--social-icon-size);
 }
 
+/* page 2 */
+#about {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--blue-bg);
+}
+
+#about .row {
+    display: flex;
+    flex-direction: row;
+    margin: 0 10vw;
+}
+
+#about .bg-text {
+    position: absolute;
+    top: 5.208vw;
+    left: -2.604vw;
+    font-family: var(--josephin-sans);
+    font-size: 14.75vw;
+    text-transform: uppercase;
+    color: var(--dark-blue);
+    opacity: 15%;
+    overflow: hidden;
+}
+
+#about .col {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 5vh;
+}
+
+#about .col:nth-child(1) {
+    align-items: flex-start;
+    text-align: justify;
+}
+
+#about .col:nth-child(2) {
+    max-width: 10vw;
+}
+
+#about .col:nth-child(3) {
+    text-align: center;
+}
+
+#about .text-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-col>p {
+    text-align: left;
+}
+
+#about .fg-text {
+    position: absolute;
+    top: 12vw;
+    left: 10vw;
+    font-family: var(--josephin-sans);
+    font-size: 3.5vw;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 4vw;
+    z-index: 1;
+}
+
+#about #gradient-border {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: '';
+    position: relative;
+    height: calc(15vw + var(--borderWidth) * 2);
+    width: calc(15vw + var(--borderWidth) * 2);
+    /* background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82); */
+    background: linear-gradient(90deg, white, var(--light-blue), var(--blue), var(--blue-bg), var(--dark-blue), var(--blue-bg), var(--blue), var(--light-blue), white);
+    border-radius: 100%;
+    animation: animatedgradient 12s ease alternate infinite;
+    background-size: 300% 300%;
+}
+
+#about #github-avatar {
+    width: 95%;
+    border-radius: 100%;
+}
+
+#about #github-bio, #about #github-hired {
+    font-family: var(--inter);
+    color: white;
+}
+
+#about #github-bio {
+    font-size: var(--text);
+    margin-top: 2vw;
+    margin-bottom: 1vw;
+    white-space: pre;
+}
+
+#about #github-hired {
+    font-size: var(--text);
+    margin-top: 1vw;
+}
+
+#about #about-me {
+    font-family: var(--inter);
+    font-size: 0.938vw;
+    line-height: 150%;
+    text-align: justify;
+    color: white;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    cursor: pointer;
+}
+
+#about #resume {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+#about #view-resume {
+    display: inline-block;
+    margin: 2vw auto;
+    outline: none;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: var(--text);
+    padding: 0.1vw 1.25vw;
+    height: 3vw;
+    border: none;
+    color: #fff;
+    background-color: var(--blue);
+    transition: background-color .17s ease, color .17s ease;
+}
+
+#about #view-resume:hover {
+    background-color: #3b78dc;
+}
+
 /* hidden */
 .text-fade-in {
     opacity: 0%;
+}
+
+.hide {
+    visibility: hidden;
 }
 
 /* visible */
@@ -233,4 +408,19 @@ body {
 
 .grow:hover {
     transform: scale(1.1);
+}
+
+/* image border gradient */
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }

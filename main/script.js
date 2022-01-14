@@ -1,5 +1,42 @@
 console.log("Welcome to my website!");
 
+const getGitHubUser = async (url) => {
+    try {
+        // fetch and read JSON
+        let response = await fetch("https://api.github.com/users/jamcmich");
+        let user = await response.json();
+
+        // get user's avatar
+        let avatar = document.getElementById("github-avatar");
+        avatar.src = user.avatar_url;
+        avatar.classList.remove("hide");
+
+        // get user's bio
+        let bio = document.getElementById("github-bio");
+        bio.textContent = `${user.bio.substring(21)}\r\n${user.bio.substring(0, 20)}`;
+        bio.classList.remove("hide");
+
+        // get user's hireable status
+        let hired = document.getElementById("github-hired");
+        switch (user.hireable) {
+            case true:
+                hired.textContent = "Looking for a full-time, entry-level position!";
+                break;
+            case false:
+                hired.textContent = "Not available for work at this time.";
+                break;
+            case null:
+                hired.textContent = "Looking for a full-time, entry-level position!";
+                break;
+            default:
+                console.log(`Hireable property is ${user.hireable}`);
+        }
+        hired.classList.remove("hide");
+    } catch (e) {
+        console.log(`Error fetching data: ${e}`);
+    }
+}
+
 const addClasses = () => {
     // social icons
     let social = document.querySelectorAll(".row .wrapper .col");
@@ -16,6 +53,19 @@ const addClasses = () => {
 
     nameSpans.forEach((el) => {
         el.classList.add("hanging-animation");
+    });
+}
+
+const addEvents = () => {
+    // overlay
+    let overlay = document.getElementById("overlay");
+    overlay.addEventListener("click", dismiss = () => {
+        overlay.style.display = "none";
+    });
+
+    let viewResume = document.getElementById("view-resume");
+    viewResume.addEventListener("click", show = () => {
+        overlay.style.display = "block";
     });
 }
 
@@ -58,10 +108,14 @@ const spanWrapper = (el) => {
     $(el).html(out);
 }
 
+/* functions calls */
+getGitHubUser();
+
 let spanMe = document.querySelectorAll("#overlap > p");
 spanMe.forEach((el) => {
     spanWrapper(el);
 });
 
 addClasses();
+addEvents();
 typewriterAnimation();
