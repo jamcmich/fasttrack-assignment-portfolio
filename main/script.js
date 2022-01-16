@@ -86,8 +86,8 @@ const addEvents = () => {
 
 let homeSection = document.querySelector("#overlap");
 let aboutSection = document.querySelector("#about-me");
-// let projectsSection = document.querySelector("#");
-let els = [homeSection, aboutSection];
+let projectsSection = document.querySelector("#github-projects");
+let els = [homeSection, aboutSection, projectsSection];
 
 $(window).scroll(function() {
     let dots = document.querySelectorAll(".dot-nav > li");
@@ -99,7 +99,7 @@ $(window).scroll(function() {
         var top_of_screen = $(window).scrollTop();
     
         if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)){
-            console.log(`${el.id} is in the view`)
+            // console.log(`${el.id} is in the view`)
 
             dots.forEach((el) => {
                 el.classList.remove("current");
@@ -111,6 +111,10 @@ $(window).scroll(function() {
 
             if (el.id === "about-me") {
                 dots[1].classList.add("current");
+            }
+
+            if (el.id === "github-projects") {
+                dots[2].classList.add("current");
             }
         }
     });

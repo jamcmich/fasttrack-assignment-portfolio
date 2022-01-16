@@ -38,6 +38,72 @@ body {
     min-height: 100vh;
 }
 
+#navigation {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 99;
+}
+
+.dot-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: transparent;
+    width: 8vw;
+    ;
+    height: 15vh;
+    list-style-type: none;
+}
+
+.dot {
+    width: 1vw;
+    height: 1vw;
+    background-color: rgba(228, 228, 228, 0.75);
+    border-radius: 100%;
+    opacity: 100%;
+}
+
+.dot a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 1vw;
+    height: 1vw;
+}
+
+.current {
+    background-color: var(--blue);
+    transition: 0.8s;
+}
+
+/* Tooltip text */
+.tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: var(--blue);
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    font-size: var(--text);
+    font-family: var(--inter);
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.dot-nav a:hover .tooltiptext {
+    visibility: visible;
+}
+
 /* page 1 */
 #landing {
     display: flex;
@@ -330,75 +396,29 @@ body {
 }
 
 #projects {
-    display: block;
+    display: flex;
     min-height: 100vh;
     background-color: var(--blue-bg);
 }
 
-#navigation {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: flex-start;
-    z-index: 99;
-}
-
-.dot-nav {
+#github-projects {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    background-color: transparent;
-    width: 8vw;;
-    height: 15vh;
+    justify-content: center;
+    width: 100%;
+}
+
+#github-projects li {
     list-style-type: none;
+    margin: 1vw auto;
 }
 
-.dot {
-    width: 1vw;
-    height: 1vw;
-    background-color: rgba(228, 228, 228, 0.75);
-    border-radius: 100%;
-    opacity: 75%;
-}
-
-.dot a {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 1vw;
-    height: 1vw;
-}
-
-.current {
-    background-color: var(--blue);
-    transition: 0.8s;
-}
-
-/* Tooltip text */
-.tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: var(--blue);
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
+#github-projects a {
     font-size: var(--text);
     font-family: var(--inter);
-   
-    /* Position the tooltip text */
-    position: absolute;
-    z-index: 1;
-  }
-  
-  /* Show the tooltip text when you mouse over the tooltip container */
-  .dot-nav a:hover .tooltiptext {
-    visibility: visible;
-  }
+    color: white;
+}
 
 /* hidden */
 .text-fade-in {
