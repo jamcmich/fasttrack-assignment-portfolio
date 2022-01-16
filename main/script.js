@@ -67,7 +67,54 @@ const addEvents = () => {
     viewResume.addEventListener("click", show = () => {
         overlay.style.display = "block";
     });
+
+    // dot navigation
+    let dots = document.querySelectorAll(".dot-nav > li");
+    const removeDots = () => {
+        dots.forEach((el) => {
+            el.classList.remove("current");
+        });
+    }
+
+    dots.forEach((el) => {
+        el.addEventListener("click", highlight = () => {
+            removeDots();
+            el.classList.add("current");
+        });
+    });
 }
+
+let homeSection = document.querySelector("#overlap");
+let aboutSection = document.querySelector("#about-me");
+// let projectsSection = document.querySelector("#");
+let els = [homeSection, aboutSection];
+
+$(window).scroll(function() {
+    let dots = document.querySelectorAll(".dot-nav > li");
+
+    els.forEach((el) => {
+        var top_of_element = $(el).offset().top;
+        var bottom_of_element = $(el).offset().top + $(el).outerHeight();
+        var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
+        var top_of_screen = $(window).scrollTop();
+    
+        if ((bottom_of_screen > top_of_element) && (top_of_screen < bottom_of_element)){
+            console.log(`${el.id} is in the view`)
+
+            dots.forEach((el) => {
+                el.classList.remove("current");
+            });
+
+            if (el.id === "overlap") {
+                dots[0].classList.add("current");
+            }
+
+            if (el.id === "about-me") {
+                dots[1].classList.add("current");
+            }
+        }
+    });
+});
 
 const typewriterAnimation = () => {
     var messageArray = ["Software Engineer & Developer"]; // could make these random or sequential statements in the future
